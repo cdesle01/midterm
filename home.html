@@ -14,8 +14,9 @@
 </style>
 
 <script language = "javascript">
-  pets = ["dog1.jpeg", "cat1.jpeg", "bunny.jpeg", "parrot.jpeg", "fish.jpeg", "snake.jpeg", "dog2.jpeg", "guineapig.jpeg", "cat2.jpeg", "ferret.jpeg"];
-  var petIndex = 0;
+  pets = ["dog1.jpeg", "cat1.jpeg", "bunny.jpeg", "parrot.jpeg", "fish.jpeg",
+  "snake.jpeg", "dog2.jpeg", "guineapig.jpeg", "cat2.jpeg", "ferret.jpeg"];
+  var petIndex = Math.floor(Math.random() * 10);
 </script>
 
 </head>
@@ -24,19 +25,22 @@
 
   <h1 class="header"> Pet Palace
     <a href="home.html"><img src="logo.png"></a>
+    <br/>
   </h1>
 
   </br></br></br></br></br></br></br>
 
     <div class="container">
       <div id='slide'>
-        <img src="dog1.jpeg" style="width:100%">
+        <img src="" style="width:100%">
       </div>
 
+      <div class="title outline" style="
+      position:sticky
+      top:0">
+          <h1>Pet Palace</h1>
+      </div>
 
-     <div class="title outline">
-         <h1>Pet Palace</h1>
-     </div>
      <div class="subtitle outline">
          <h2>One Stop Shop</h2>
      </div>
@@ -44,33 +48,37 @@
     </div>
 
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 	<script language="javascript">
-    $(document).ready(slideShow());
+    $("#slide img").attr("src", pets[petIndex]);
+    $(document).ready(slideOut());
 
-    function slideShow() {
-      $("#slide img").delay(3000).fadeOut(1000, nextSlide);
+    function slideOut() {
+      $("#slide img").delay(3000).fadeOut(1000, slideIn);
     }
 
-    function nextSlide() {
+    function slideIn() {
       petIndex++;
       petIndex = petIndex == pets.length? 0 : petIndex;
       $("#slide img").attr("src", pets[petIndex]);
-      $("#slide img").fadeIn(1000, slideShow);
+      $("#slide img").fadeIn(1000, slideOut);
     }
-
 
   </script>
 
     <h3 class="topnav"  >
       <img src="prints.png">
+      <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="birdtracks.png">
+      <img style="width: 20px;margin-left:0;margin-bottom:5px;" src="pad.png">
       <a href="cart.html">Cart</a>
       <a href="contact.html">Contact</a>
       <a href="aboutus.html">About us</a>
       <a href="supplies.html">Supplies</a>
       <a href="toys.html">Toys</a>
       <a href="appointments.html">Appointments</a>
-      <a href="home.html">Home</a>
+      <a class="active" href="home.html">Home</a>
     </h3>
 
 
@@ -90,7 +98,7 @@
 </br></br>
     <footer class="footer">
     <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
-    <a href="appointments.html">Services</a> &nbsp;&nbsp;&nbsp;
+    <a href="appointments.html">Appointments</a> &nbsp;&nbsp;&nbsp;
     <a href="contact.html">Contact</a>
     </footer>
 

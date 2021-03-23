@@ -7,160 +7,632 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 <style type="text/css">
     h1,h3{margin:0; border:0;}
-    p{margin: 20px;}
-    #cart-table div {display:inline-block; font-size: 15px}
-    #cart-table div.singleItem {display:block;  padding: 15px 0;  border-bottom: 1px solid #333}
 
-    .productColumn {width: 150px}
-    .priceColumn {width: 90px}
-    .priceColumn input {width: 70px}
-    .quantityColumn {width: 80px}
+    p{border-bottom: 1px solid #333;}
 
-    #cart-table div.title {font-weight:700;  font-size: 18px }
-</style>
-<script language="javascript">
-itemsList = [
-    ["Large bed", 24.99],
-    ["Small bed", 14.99],
-    ["Hard food", 12.99],
-    ["Soft food", 11.99],
-    ["Treats", 8.99],
-    ["Large crate", 35.99],
-    ["Small crate", 23.99],
-    ["Food bowl", 6.99],
-    ["Collar", 7.99],
-    ["Leash", 6.99],
-    ["Shampoo", 5.99],
-    ["Conditioner", 5.99],
-    ["Brush", 3.99],
-    ["Doggie bags", 2.99],
-    ["Cleaner", 4.99],
-    ["Plush dog toy", 4.99],
-    ["Squeeze ball", 2.99],
-    ["Dogwood toy", 7.99],
-    ["Rope with ball", 5.99],
-    ["Pacifier toy", 3.99],
-    ["Plush cow toy", 6.99],
-    ["Kong dog toy", 12.99],
-    ["Squeaking balls", 4.99],
-    ["Elephant toy", 5.99],
-    ["Beef bone", 5.99]
-];
-numItems = 25;
+        .left-col{
+            background-color: #9fc489;
+            width: 25%;
+            display: inline-block;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+              border: 3px black solid;
+              border-radius: 10px;
 
-$(document).ready(function(){
-	$(".quantityColumn select").change(function() {
-		updateFinal();
-	})
-    function updateFinal()
-	{
-		total=0;
-		for (n=0;n<numItems;n++)
-		{
-			cost = itemsList[n][1]
-			quantity = document.forms[0].itemQuantity[n].value
-			itemTotal =cost * quantity;
-			total += itemTotal;
-		}
-		$("#total").html("$ " + total.toFixed(2))
-	}
-})
+        }
 
-function quantityGen()
-{
-	document.write("<select name='itemQuantity'>");
-	for (i=0; i<10;i++)
-		document.write("<option>" + i + "</option>");
-	document.write("</select>");
-}
+        .middle-col{
+            background-color: #ccc;
+            width: 25%;
+            display: inline-block;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+              border: 3px black solid;
+              border-radius: 10px;
+        }
 
-function createOrderForm()
-{
+        .box{
+            color: #000;
+            padding: 10px;
+            display: none;
+            margin-top: 10px;
+        }
+        .plushDog{ background: #9fc489; }
+        .squeezeBall{ background: #9fc489; }
+        .dogWood{ background: #9fc489; }
+        .ropeBall{background: #9fc489;}
+        .pacifier{background: #9fc489;}
+        .plushCow{background: #9fc489;}
+        .kongDog{background: #9fc489;}
+        .squeakingBalls{background: #9fc489;}
+        .elephant{background: #9fc489;}
+        .beefBone{background: #9fc489;}
 
-	for (n=0;n<numItems;n++)
-	{
-		document.write("<div class='singleItem'>")
+        .largeBed{background: #ddd;}
+        .smallBed{background: #ddd;}
+        .hardFood{background: #ddd;}
+        .softFood{background: #ddd;}
+        .treats{background: #ddd;}
+        .largeCrate{background: #ddd;}
+        .smallCrate{background: #ddd;}
+        .foodBowl{background: #ddd;}
+        .collar{background: #ddd;}
+        .leash{background: #ddd;}
+        .shampoo{background: #ddd;}
+        .conditioner{background: #ddd;}
+        .brush{background: #ddd;}
+        .doggieBags{background: #ddd;}
+        .cleaner{background: #ddd;}
+        label{ margin-right: 10px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            var inputValue = $(this).attr("value");
+            $("." + inputValue).toggle();
+        });
+    });
+    </script>
+    </head>
+    <body>
+      <h1 class="header"> Pet Palace
+        <a href="home.html"><img src="logo.png"></a>
+      </h1>
 
-            document.write ("<div class='productColumn'>");
-			document.write(itemsList[n][0]);
-			document.write ("</div>");
+      <h3 class="topnav" >
+        <img src="prints.png">
+        <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="birdtracks.png">
+        <img style="width: 20px;margin-left:0;margin-bottom:5px;" src="pad.png">
+        <a class="active" href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutus.html">About us</a>
+        <a href="supplies.html">Supplies</a>
+        <a href="toys.html">Toys</a>
+        <a href="appointments.html">Appointments</a>
+        <a href="home.html">Home</a>
+      </h3>
 
-			document.write ("<div class='priceColumn'> " + "$" + itemsList[n][1] + "</div>");
+      <div class="spacing" style="height:180px">
+          <p></p>
+      </div>
 
-			document.write ("<div class='quantityColumn'>");
-				quantityGen();
-			document.write ("</div>");
-		document.write ("</div>");
-	}
-}
-
-</script>
-</head>
-
-<body>
-
-  <h1 class="header"> Pet Palace
-    <a href="home.html"><img src="logo.png"></a>
-  </h1>
-
-  <h3 class="topnav" >
-    <img src="prints.png">
-    <a href="cart.html">Cart</a>
-    <a href="contact.html">Contact</a>
-    <a href="aboutus.html">About us</a>
-    <a href="supplies.html">Supplies</a>
-    <a href="toys.html">Toys</a>
-    <a href="appointments.html">Appointments</a>
-    <a href="home.html">Home</a>
-  </h3>
-
-  <div class="spacing" style="height:180px">
-      <p></p>
-  </div>
-
-  <h2>Your Cart</h2>
-
-
-  <div id='cart-table'>
-  <div class='singleItem'>
-      <div class='productColumn title'>Product</div>
-      <div class='priceColumn title'>Price Each</div>
-      <div class='quantityColumn title'>Quantity</div>
-  </div>
-
-  <form style="text-align:center;
-          color:white;
-          background-color:white;
-          background-size:30px 100%, 100% 100%;
-          width:650px;
-          padding:20px;
-          color:black;
-          margin:40px 29px auto;
-          border: 3px black solid;
-          border-radius: 10px;
-         ">
-  <script language="javascript">
-      createOrderForm();
-  </script>
-  </form>
-  </div>
-  <div id='total'
-    style="float:left; padding-left: 308px;
-    position:sticky;
-    top:80;">
-    Total:  $0.00</div>
+     <h2>Cart <img style="width:30px;" src="cart.png"></h2>
+       <hr></hr>
+        <h3 style="margin:0">Retail In Stock</h3>
+        <div class="left-col">
+            <h4 style="padding-left: 22px">Toys</h4>
+            <p><label><input type="checkbox" name="toysCheckbox" value="plushDog"> Plush Dog Toy: $4.99</label></p>
+           <p><label><input type="checkbox" name="toysCheckbox" value="squeezeBall"> Squeeze Ball: $2.99</label></p>
+            <p><label><input type="checkbox" name="toysCheckbox" value="dogWood"> Dog Wood Toy: $7.99</label></p>
+            <p><label><input type="checkbox" name="toysCheckbox" value="ropeBall"> Rope with Ball: $5.99</label></p>
+            <p><label><input type="checkbox" name="toysCheckbox" value="pacifier"> Pacifier Toy: $3.99</label></p>
+            <p> <label><input type="checkbox" name="toysCheckbox" value="plushCow"> Plush Cow Toy: $6.99</label></p>
+            <p> <label><input type="checkbox" name="toysCheckbox" value="kongDog"> Kong Dog Toy: $12.99</label> </p>
+            <p><label><input type="checkbox" name="toysCheckbox" value="squeakingBalls"> Squeaking Balls: $4.99</label></p>
+            <p> <label><input type="checkbox" name="toysCheckbox" value="elephant">Elephant Toy: $5.99</label></p>
+            <p> <label><input type="checkbox" name="toysCheckbox" value="beefBone">Beef Bone: $6.99</label></p>
+            <p style="border-bottom:0;"> <label></label></p>
+            <p style="border-bottom:0;"> <label></label></p>
+            <p style="border-bottom:0;"> <label></label></p>
+            <p style="border-bottom:0;"> <label></label></p>
+            <p style="border-bottom:0;"> <label></label></p>
+        </div>
+        <div class="middle-col">
+            <h4 style="padding-left: 22px">Supplies</h4>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="largeBed"> Large Bed: $24.99</label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="smallBed"> Small Bed: $14.99</label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="hardFood"> Hard Food: $12.99</label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="softFood"> Soft Food: $11.99</label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="treats"> Treats: $8.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="largeCrate"> Large Crate: $35.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="smallCrate"> Small Crate: $23.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="foodBowl"> Food Bowl: $6.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="collar"> Collar: $7.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="leash"> Leash: $6.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="shampoo"> Shampoo: $5.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="conditioner"> Conditioner: $5.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="brush"> Brush: $3.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="doggieBags"> Doggie Bags: $2.99 </label></p>
+            <p><label><input type="checkbox" name="supplyCheckbox" value="cleaner"> Cleaner: $4.99 </label></p>
+        </div>
 
 
 
-<br/><br/>
+    <br/><br/>
+    <h3 style="margin:0">Cart Summary</h3>
+    <hr></hr>
+        <!--TOYS -->
+    <div class="left-col" style="border:0; background-color: #FFF;">
+        <div class="plushDog box"> Plush Dog Toy
+            <select name='plushDog' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost1'/></td></tr>
+        </div>
+        <div class="squeezeBall box"> Squeeze Ball
+            <select name='squeezeBall' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost2'/></td></tr>
+        </div>
+        <div class="dogWood box"> Dog Wood Toy
+            <select name='dogWood' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost3'/></td></tr>
+        </div>
+        <div class="ropeBall box"> Rope with Ball
+            <select name='ropeBall' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost4'/></td></tr>
+        </div>
+        <div class="pacifier box"> Pacifier Toy
+            <select name='pacifier' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost5'/></td></tr>
+        </div>
+        <div class="plushCow box"> Plush Cow Toy
+            <select name='plushCow' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost6'/></td></tr>
+        </div>
+        <div class="kongDog box"> Kong Dog Toy
+            <select name='kongDog' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost7'/></td></tr>
+        </div>
+        <div class="squeakingBalls box"> Squeaking Balls
+            <select name='squeakingBalls' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost8'/></td></tr>
+        </div>
+        <div class="elephant box"> Elephant Toy
+            <select name='elephant' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost9'/></td></tr>
+        </div>
+        <div class="beefBone box"> Beef Bone
+            <select name='beefBone' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost10'/></td></tr>
+        </div>
+    </div>
+
+        <!-- SUPPLIES -->
+    <div class="middle-col" style="border:0; background-color: #FFF;">
+        <div class="largeBed box"> Large Bed
+            <select name='largeBed' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost11'/></td></tr>
+        </div>
+        <div class="smallBed box"> Small Bed
+            <select name='smallBed' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost12'/></td></tr>
+        </div>
+        <div class="hardFood box"> Hard Food
+            <select name='hardFood' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost13'/></td></tr>
+        </div>
+        <div class="softFood box"> Soft Food
+            <select name='softFood' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost14'/></td></tr>
+        </div>
+        <div class="treats box"> Treats
+            <select name='treats' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost15'/></td></tr>
+        </div>
+        <div class="largeCrate box"> Large Crate
+            <select name='largeCrate' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost16'/></td></tr>
+        </div>
+        <div class="smallCrate box"> Small Crate
+            <select name='smallCrate' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost17'/></td></tr>
+        </div>
+        <div class="foodBowl box"> Food Bowl
+            <select name='foodBowl' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost18'/></td></tr>
+        </div>
+        <div class="collar box"> Collar
+            <select name='collar' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost19'/></td></tr>
+        </div>
+        <div class="leash box"> Leash
+            <select name='leash' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost20'/></td></tr>
+        </div>
+        <div class="shampoo box"> Shampoo
+            <select name='shampoo' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost21'/></td></tr>
+        </div>
+        <div class="conditioner box"> Conditioner
+            <select name='conditioner' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost22'/></td></tr>
+        </div>
+        <div class="brush box"> Brush
+            <select name='brush' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost23'/></td></tr>
+        </div>
+        <div class="doggieBags box"> Doggie Bags
+            <select name='doggieBags' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost24'/></td></tr>
+        </div>
+        <div class="cleaner box"> Cleaner
+            <select name='cleaner' size='1'>"
+            <option> 0 </option>
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            </select>
+            <input type='text' name='cost25'/></td></tr>
+        </div>
+    </div>
 
 
-<a href="checkout.html" id="button" style="outline: 5px dotted #9fc489;">Checkout</a>
+
+
+
+    <script language="javascript">
+
+    $(document).ready(function() //jquery that access the document
+    {
+        toy = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; //25 array to contain each selected select value
+        price = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        subtotal = 0;
+        tax = 0;
+        total = 0;
+
+
+      $("select[name=plushDog]").change(function() //gets the selected value from type select and the name given to each selector
+        {
+            toy[0] = document.getElementsByName("plushDog")[0].value; //gets inputed value
+            price[0] = toy[0] * 4.99; //stores cost of amount of this item ordered for later calculations
+            document.getElementsByName("cost1")[0].value = price[0].toFixed(2); //writes the calculated cost for this item in the "cost" text box
+        });
+       $("select[name=squeezeBall]").change(function()
+        {
+            toy[1] = document.getElementsByName("squeezeBall")[0].value;
+            price[1] = toy[1] * 2.99;
+            document.getElementsByName("cost2")[0].value = price[1].toFixed(2);
+        });
+        $("select[name=dogWood]").change(function()
+        {
+            toy[2] = document.getElementsByName("dogWood")[0].value;
+            price[2] = toy[2] * 7.99;
+            document.getElementsByName("cost3")[0].value = price[2].toFixed(2);
+        });
+      $("select[name=ropeBall]").change(function()
+        {
+            toy[3] = document.getElementsByName("ropeBall")[0].value;
+            price[3] = toy[3] * 5.99;
+            document.getElementsByName("cost4")[0].value = price[3].toFixed(2);
+        });
+      $("select[name=pacifier]").change(function()
+        {
+            toy[4] = document.getElementsByName("pacifier")[0].value;
+            price[4] = toy[4] * 3.99;
+            document.getElementsByName("cost5")[0].value = price[4].toFixed(2);
+        });
+      $("select[name=plushCow]").change(function()
+        {
+            toy[5] = document.getElementsByName("plushCow")[0].value;
+            price[5] = toy[5] * 6.99;
+            document.getElementsByName("cost6")[0].value = price[5].toFixed(2);
+        });
+      $("select[name=kongDog]").change(function()
+        {
+            toy[6] = document.getElementsByName("kongDog")[0].value;
+            price[6] = toy[6] * 12.99;
+            document.getElementsByName("cost7")[0].value = price[6].toFixed(2);
+        });
+      $("select[name=squeakingBalls]").change(function()
+        {
+            toy[7]= document.getElementsByName("squeakingBalls")[0].value;
+            price[7] = toy[7] * 4.99;
+            document.getElementsByName("cost8")[0].value = price[7].toFixed(2);
+        });
+      $("select[name=elephant]").change(function()
+        {
+            toy[8]= document.getElementsByName("elephant")[0].value;
+            price[8] = toy[8] * 5.99;
+            document.getElementsByName("cost9")[0].value = price[8].toFixed(2);
+        });
+      $("select[name=beefBone]").change(function()
+        {
+            toy[9] = document.getElementsByName("beefBone")[0].value;
+            price[9] = toy[9] * 6.99;
+            document.getElementsByName("cost10")[0].value = price[9].toFixed(2);
+        });
+      $("select[name=largeBed]").change(function() //start of supplies
+        {
+            toy[10] = document.getElementsByName("largeBed")[0].value;
+            price[10] = toy[10] * 24.99;
+            document.getElementsByName("cost11")[0].value = price[10].toFixed(2);
+        });
+      $("select[name=smallBed]").change(function() //start of supplies
+        {
+            toy[11] = document.getElementsByName("smallBed")[0].value;
+            price[11] = toy[11] * 14.99;
+            document.getElementsByName("cost12")[0].value = price[11].toFixed(2);
+        });
+      $("select[name=hardFood]").change(function() //start of supplies
+          {
+            toy[12] = document.getElementsByName("hardFood")[0].value;
+            price[12] = toy[12] * 12.99;
+            document.getElementsByName("cost13")[0].value = price[12].toFixed(2);
+        });
+      $("select[name=softFood]").change(function() //start of supplies
+          {
+            toy[13] = document.getElementsByName("softFood")[0].value;
+            price[13] = toy[13] * 11.99;
+            document.getElementsByName("cost14")[0].value = price[13].toFixed(2);
+        });
+      $("select[name=treats]").change(function() //start of supplies
+            {
+              toy[14] = document.getElementsByName("treats")[0].value;
+              price[14] = toy[14] * 8.99;
+              document.getElementsByName("cost15")[0].value = price[14].toFixed(2);
+          });
+      $("select[name=largeCrate]").change(function() //start of supplies
+        {
+            toy[15] = document.getElementsByName("largeCrate")[0].value;
+            price[15] = toy[15] * 35.99;
+            document.getElementsByName("cost16")[0].value = price[15].toFixed(2);
+        });
+      $("select[name=smallCrate]").change(function() //start of supplies
+        {
+            toy[16] = document.getElementsByName("smallCrate")[0].value;
+            price[16] = toy[16] * 23.99;
+            document.getElementsByName("cost17")[0].value = price[16].toFixed(2);
+        });
+      $("select[name=foodBowl]").change(function() //start of supplies
+        {
+            toy[17] = document.getElementsByName("foodBowl")[0].value;
+            price[17] = toy[17] * 6.99;
+            document.getElementsByName("cost18")[0].value = price[17].toFixed(2);
+        });
+      $("select[name=collar").change(function() //start of supplies
+        {
+            toy[18] = document.getElementsByName("collar")[0].value;
+            price[18] = toy[18] * 7.99;
+            document.getElementsByName("cost19")[0].value = price[18].toFixed(2);
+        });
+      $("select[name=leash]").change(function() //start of supplies
+        {
+            toy[19] = document.getElementsByName("leash")[0].value;
+            price[19] = toy[19] * 6.99;
+            document.getElementsByName("cost20")[0].value = price[19].toFixed(2);
+        });
+      $("select[name=shampoo]").change(function() //start of supplies
+        {
+            toy[20] = document.getElementsByName("shampoo")[0].value;
+            price[20] = toy[20] * 5.99;
+            document.getElementsByName("cost21")[0].value = price[20].toFixed(2);
+        });
+      $("select[name=conditioner]").change(function() //start of supplies
+        {
+            toy[21] = document.getElementsByName("conditioner")[0].value;
+            price[21] = toy[21] * 5.99;
+            document.getElementsByName("cost22")[0].value = price[21].toFixed(2);
+        });
+      $("select[name=brush]").change(function() //start of supplies
+        {
+            toy[22] = document.getElementsByName("brush")[0].value;
+            price[22] = toy[22] * 3.99;
+            document.getElementsByName("cost23")[0].value = price[22].toFixed(2);
+        });
+      $("select[name=doggieBags]").change(function() //start of supplies
+        {
+            toy[23] = document.getElementsByName("doggieBags")[0].value;
+            price[23] = toy[23] * 2.99;
+            document.getElementsByName("cost24")[0].value = price[23].toFixed(2);
+        });
+      $("select[name=cleaner]").change(function() //start of supplies
+        {
+            toy[24] = document.getElementsByName("cleaner")[0].value;
+            price[24] = toy[24] * 35.99;
+            document.getElementsByName("cost25")[0].value = price[24].toFixed(2);
+        });
+
+
+      $("select").change(function()
+        {
+            subtotal = 0;
+            for(var x=0; x<price.length; x++)
+            {
+                subtotal+=price[x];
+
+            }
+            document.getElementsByName("subtotal")[0].value = subtotal.toFixed(2);
+            tax = subtotal * 0.0625; //calculated tax
+                document.getElementsByName("tax")[0].value = tax.toFixed(2);
+            total = subtotal + tax; //calculates total
+                document.getElementsByName("total")[0].value = total.toFixed(2); //into textbox
+        });
+
+      $('input[type="button"]').click(function()
+      {
+            document.write(price);
+      });
+
+
+    });
+    </script>
+
+    <p style="border-bottom:none;">Subtotal:
+       <input type="text"  name='subtotal' id="subtotal" />
+    </p>
+    <p style="border-bottom:none;">Mass tax 6.25%:
+       <input type="text"  name='tax' id="tax" />
+    </p>
+    <p style="border-bottom:none;">Total:  <input type="text"  name='total' id="total" />
+    </p>
+
+    <a href="checkout.html" id="button" style="outline: 5px dotted #9fc489; float:left;">Checkout</a>
 
   <br/><br/><br/><br/>
       <footer class="footer">
       <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
-      <a href="appointments.html">Services</a> &nbsp;&nbsp;&nbsp;
+      <a href="appointments.html">Appointments</a> &nbsp;&nbsp;&nbsp;
       <a href="contact.html">Contact</a>
       </footer>
 

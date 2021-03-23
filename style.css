@@ -170,6 +170,9 @@ div.middle-col img {
 	font-family: sans-serif;
 }
 
+.active {
+	background-color: #4AAA50;
+}
 
 .space {
 	background-color: #fff;

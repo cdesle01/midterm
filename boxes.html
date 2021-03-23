@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Elements Using Checkboxes</title>
+<style>
+
+    .left-col{
+        background-color: #ddd;
+        width: 30%;
+        display: inline-block;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .middle-col{
+        background-color: #ccc;
+        width: 30%;
+        display: inline-block;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .box{
+        color: #fff;
+        padding: 10px;
+        display: none;
+        margin-top: 10px;
+    }
+    .plushDog{ background: #ff0000; }
+    .squeezeBall{ background: #228B22; }
+    .dogWood{ background: #0000ff; }
+    .ropeBall{background: #001122;}
+    .pacifier{background: #001122;}
+    .plushCow{background: #001122;}
+    .kongDog{background: #001122;}
+    .squeakingBalls{background: #001122;}
+    .elephant{background: #001122;}
+    .beefBone{background: #001122;}
+
+    .largeBed{background: #001122;}
+    .smallBed{background: #001122;}
+    label{ margin-right: 10px; }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('input[type="checkbox"]').click(function(){
+        var inputValue = $(this).attr("value");
+        $("." + inputValue).toggle();
+    });
+});
+</script>
+</head>
+<body>
+    <h3 style="margin:0">Retail In Stock</h3>
+    <div class="left-col">
+        <h4 style="padding-left: 22px">Toys</h4>
+        <p><label><input type="checkbox" name="toysCheckbox" value="plushDog"> Plush Dog Toy</label></p>
+       <p><label><input type="checkbox" name="toysCheckbox" value="squeezeBall"> Squeeze Ball</label></p>
+        <p><label><input type="checkbox" name="toysCheckbox" value="dogWood"> Dog Wood Toy</label></p>
+        <p><label><input type="checkbox" name="toysCheckbox" value="ropeBall"> Rope with Ball</label></p>
+        <p><label><input type="checkbox" name="toysCheckbox" value="pacifier"> Pacifier Toy</label></p>
+        <p> <label><input type="checkbox" name="toysCheckbox" value="plushCow"> Plush Cow Toy</label></p>
+        <p> <label><input type="checkbox" name="toysCheckbox" value="kongDog"> Kong Dog Toy</label> </p>
+        <p><label><input type="checkbox" name="toysCheckbox" value="squeakingBalls"> Squeaking Balls</label></p>
+        <p> <label><input type="checkbox" name="toysCheckbox" value="elephant">Elephant Toy</label></p>
+        <p> <label><input type="checkbox" name="toysCheckbox" value="beefBone">Beef Bone</label></p>
+    </div>
+    <div class="middle-col">
+        <h4 style="padding-left: 22px">Supplies</h4>
+        <p><label><input type="checkbox" name="supplyCheckbox" value="largeBed"> Large Bed</label></p>
+        <p><label><input type="checkbox" name="supplyCheckbox" value="smallBed"> Small Bed</label></p>
+    </div>
+    
+
+
+<br/><br/>
+<h3 style="margin:0">Cart Summary</h3>
+    <!--TOYS -->
+<div class="left-col">
+    <div class="plushDog box"> Plush Dog Toy
+        <select name='plushDog' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost1'/></td></tr>
+    </div>
+    <div class="squeezeBall box"> Squeeze Ball
+        <select name='squeezeBall' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost2'/></td></tr>
+    </div>
+    <div class="dogWood box"> Dog Wood Toy
+        <select name='dogWood' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost3'/></td></tr>
+    </div>
+    <div class="ropeBall box"> Rope with Ball
+        <select name='ropeBall' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost4'/></td></tr>
+    </div>
+    <div class="pacifier box"> Pacifier Toy
+        <select name='pacifier' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost5'/></td></tr>
+    </div>
+    <div class="plushCow box"> Plush Cow Toy
+        <select name='plushCow' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost6'/></td></tr>
+    </div>
+    <div class="kongDog box"> Kong Dog Toy
+        <select name='kongDog' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost7'/></td></tr>
+    </div>
+    <div class="squeakingBalls box"> Squeaking Balls
+        <select name='squeakingBalls' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost8'/></td></tr>
+    </div>
+    <div class="elephant box"> Elephant Toy 
+        <select name='elephant' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost9'/></td></tr>
+    </div>
+    <div class="beefBone box"> Beef Bone 
+        <select name='beefBone' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost10'/></td></tr>
+    </div>
+</div>
+
+    <!-- SUPPLIES -->
+<div class="middle-col">
+    <div class="largeBed box"> Large Bed 
+        <select name='largeBed' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost11'/></td></tr>
+    </div>
+    <div class="smallBed box"> Small Bed 
+        <select name='smallBed' size='1'>"
+        <option> 0 </option>
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        </select>
+        <input type='text' name='cost12'/></td></tr>
+    </div>
+</div>
+
+
+
+
+
+<script language="javascript">
+
+$(document).ready(function() //jquery that access the document
+{ 
+    toy = [0,0,0,0,0,0,0,0,0,0,0]; //array to contain each selected select value 
+    price = [0,0,0,0,0,0,0,0,0,0,0]
+    subtotal = 0;
+    tax = 0;
+    total = 0;
+    
+
+  $("select[name=plushDog]").change(function() //gets the selected value from type select and the name given to each selector 
+    {
+        toy[0] = document.getElementsByName("plushDog")[0].value; //gets inputed value
+        price[0] = toy[0] * 4.99; //stores cost of amount of this item ordered for later calculations 
+        document.getElementsByName("cost1")[0].value = price[0].toFixed(2); //writes the calculated cost for this item in the "cost" text box 
+    });
+   $("select[name=squeezeBall]").change(function() 
+    {
+        toy[1] = document.getElementsByName("squeezeBall")[0].value; 
+        price[1] = toy[1] * 2.44; 
+        document.getElementsByName("cost2")[0].value = price[1].toFixed(2); 
+    });
+    $("select[name=dogWood]").change(function() 
+    {
+        toy[2] = document.getElementsByName("dogWood")[0].value; 
+        price[2] = toy[2] * 7.84; 
+        document.getElementsByName("cost3")[0].value = price[2].toFixed(2); 
+    });
+  $("select[name=ropeBall]").change(function() 
+    {
+        toy[3] = document.getElementsByName("ropeBall")[0].value; 
+        price[3] = toy[3] * 5.98; 
+        document.getElementsByName("cost4")[0].value = price[3].toFixed(2); 
+    });
+  $("select[name=pacifier]").change(function() 
+    {
+        toy[4] = document.getElementsByName("pacifier")[0].value; 
+        price[4] = toy[4] * 7.32;  
+        document.getElementsByName("cost5")[0].value = price[4].toFixed(2); 
+    });
+  $("select[name=plushCow]").change(function() 
+    {
+        toy[5] = document.getElementsByName("plushCow")[0].value; 
+        price[5] = toy[5] * 6.98; 
+        document.getElementsByName("cost6")[0].value = price[5].toFixed(2); 
+    });
+  $("select[name=kongDog]").change(function() 
+    {
+        toy[6] = document.getElementsByName("kongDog")[0].value; 
+        price[6] = toy[6] * 12.99; 
+        document.getElementsByName("cost7")[0].value = price[6].toFixed(2); 
+    });
+  $("select[name=squeakingBalls]").change(function() 
+    {
+        toy[7]= document.getElementsByName("squeakingBalls")[0].value; 
+        price[7] = toy[7] * 4.98; 
+        document.getElementsByName("cost8")[0].value = price[7].toFixed(2); 
+    });
+  $("select[name=elephant]").change(function() 
+    {
+        toy[8]= document.getElementsByName("elephant")[0].value; 
+        price[8] = toy[8] * 5.49; 
+        document.getElementsByName("cost9")[0].value = price[8].toFixed(2); 
+    });
+  $("select[name=beefBone]").change(function() 
+    {
+        toy[9] = document.getElementsByName("beefBone")[0].value; 
+        price[9] = toy[9] * 6.99; 
+        document.getElementsByName("cost10")[0].value = price[9].toFixed(2); 
+    });
+  $("select[name=largeBed]").change(function() //start of supplies
+    {
+        toy[10] = document.getElementsByName("largeBed")[0].value; 
+        price[10] = toy[10] * 4.99; 
+        document.getElementsByName("cost11")[0].value = price[10].toFixed(2); 
+    });
+  $("select[name=smallBed]").change(function() //start of supplies
+    {
+        toy[11] = document.getElementsByName("smallBed")[0].value; 
+        price[11] = toy[11] * 2.44; 
+        document.getElementsByName("cost12")[0].value = price[11].toFixed(2); 
+    });
+
+
+  $("select").change(function() 
+    {
+        subtotal = 0;
+        for(var x=0; x<price.length; x++)
+        {
+            subtotal+=price[x];
+             
+        }   
+        document.getElementsByName("subtotal")[0].value = subtotal.toFixed(2);
+        tax = subtotal * 0.0625; //calculated tax
+            document.getElementsByName("tax")[0].value = tax.toFixed(2);
+        total = subtotal + tax; //calculates total
+            document.getElementsByName("total")[0].value = total.toFixed(2); //into textbox       
+    });
+
+  $('input[type="button"]').click(function() 
+  {
+        document.write(price);
+  });
+
+
+});
+</script>
+
+<p>Subtotal: 
+   <input type="text"  name='subtotal' id="subtotal" />
+</p>
+<p>Mass tax 6.25%:
+   <input type="text"  name='tax' id="tax" />
+</p>
+<p>Total:  <input type="text"  name='total' id="total" />
+</p>
+
+<input type = "button" value = "Submit Order" />
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
