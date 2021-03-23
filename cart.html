@@ -79,10 +79,13 @@
     </script>
     </head>
     <body>
+        
+        <!--placing the header at the top of the page with logo linked to home page-->
       <h1 class="header"> Pet Palace
         <a href="home.html"><img src="logo.png"></a>
       </h1>
 
+<!--placing the navigation bar under the header -->
       <h3 class="topnav" >
         <img src="prints.png">
         <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="birdtracks.png">
@@ -100,6 +103,7 @@
           <p></p>
       </div>
 
+<!--creating the toy and supplies checkbox columns -->
      <h2>Cart <img style="width:30px;" src="cart.png"></h2>
        <hr></hr>
         <h3 style="margin:0">Retail In Stock</h3>
@@ -141,12 +145,12 @@
         </div>
 
 
-
+<!--creating the popup boxes -->
     <br/><br/>
     <h3 style="margin:0">Cart Summary</h3>
     <hr></hr>
         <!--TOYS -->
-    <div class="left-col" style="border:0; background-color: #FFF;">
+    <div class="toys-col" style="border:0; background-color: #FFF;">
         <div class="plushDog box"> Plush Dog Toy
             <select name='plushDog' size='1'>"
             <option> 0 </option>
@@ -260,7 +264,7 @@
     </div>
 
         <!-- SUPPLIES -->
-    <div class="middle-col" style="border:0; background-color: #FFF;">
+    <div class="supplies-col" style="border:0; background-color: #FFF;">
         <div class="largeBed box"> Large Bed
             <select name='largeBed' size='1'>"
             <option> 0 </option>
@@ -509,85 +513,85 @@
             price[10] = toy[10] * 24.99;
             document.getElementsByName("cost11")[0].value = price[10].toFixed(2);
         });
-      $("select[name=smallBed]").change(function() //start of supplies
+      $("select[name=smallBed]").change(function()
         {
             toy[11] = document.getElementsByName("smallBed")[0].value;
             price[11] = toy[11] * 14.99;
             document.getElementsByName("cost12")[0].value = price[11].toFixed(2);
         });
-      $("select[name=hardFood]").change(function() //start of supplies
+      $("select[name=hardFood]").change(function()
           {
             toy[12] = document.getElementsByName("hardFood")[0].value;
             price[12] = toy[12] * 12.99;
             document.getElementsByName("cost13")[0].value = price[12].toFixed(2);
         });
-      $("select[name=softFood]").change(function() //start of supplies
+      $("select[name=softFood]").change(function()
           {
             toy[13] = document.getElementsByName("softFood")[0].value;
             price[13] = toy[13] * 11.99;
             document.getElementsByName("cost14")[0].value = price[13].toFixed(2);
         });
-      $("select[name=treats]").change(function() //start of supplies
+      $("select[name=treats]").change(function()
             {
               toy[14] = document.getElementsByName("treats")[0].value;
               price[14] = toy[14] * 8.99;
               document.getElementsByName("cost15")[0].value = price[14].toFixed(2);
           });
-      $("select[name=largeCrate]").change(function() //start of supplies
+      $("select[name=largeCrate]").change(function()
         {
             toy[15] = document.getElementsByName("largeCrate")[0].value;
             price[15] = toy[15] * 35.99;
             document.getElementsByName("cost16")[0].value = price[15].toFixed(2);
         });
-      $("select[name=smallCrate]").change(function() //start of supplies
+      $("select[name=smallCrate]").change(function()
         {
             toy[16] = document.getElementsByName("smallCrate")[0].value;
             price[16] = toy[16] * 23.99;
             document.getElementsByName("cost17")[0].value = price[16].toFixed(2);
         });
-      $("select[name=foodBowl]").change(function() //start of supplies
+      $("select[name=foodBowl]").change(function()
         {
             toy[17] = document.getElementsByName("foodBowl")[0].value;
             price[17] = toy[17] * 6.99;
             document.getElementsByName("cost18")[0].value = price[17].toFixed(2);
         });
-      $("select[name=collar").change(function() //start of supplies
+      $("select[name=collar").change(function()
         {
             toy[18] = document.getElementsByName("collar")[0].value;
             price[18] = toy[18] * 7.99;
             document.getElementsByName("cost19")[0].value = price[18].toFixed(2);
         });
-      $("select[name=leash]").change(function() //start of supplies
+      $("select[name=leash]").change(function()
         {
             toy[19] = document.getElementsByName("leash")[0].value;
             price[19] = toy[19] * 6.99;
             document.getElementsByName("cost20")[0].value = price[19].toFixed(2);
         });
-      $("select[name=shampoo]").change(function() //start of supplies
+      $("select[name=shampoo]").change(function()
         {
             toy[20] = document.getElementsByName("shampoo")[0].value;
             price[20] = toy[20] * 5.99;
             document.getElementsByName("cost21")[0].value = price[20].toFixed(2);
         });
-      $("select[name=conditioner]").change(function() //start of supplies
+      $("select[name=conditioner]").change(function()
         {
             toy[21] = document.getElementsByName("conditioner")[0].value;
             price[21] = toy[21] * 5.99;
             document.getElementsByName("cost22")[0].value = price[21].toFixed(2);
         });
-      $("select[name=brush]").change(function() //start of supplies
+      $("select[name=brush]").change(function()
         {
             toy[22] = document.getElementsByName("brush")[0].value;
             price[22] = toy[22] * 3.99;
             document.getElementsByName("cost23")[0].value = price[22].toFixed(2);
         });
-      $("select[name=doggieBags]").change(function() //start of supplies
+      $("select[name=doggieBags]").change(function()
         {
             toy[23] = document.getElementsByName("doggieBags")[0].value;
             price[23] = toy[23] * 2.99;
             document.getElementsByName("cost24")[0].value = price[23].toFixed(2);
         });
-      $("select[name=cleaner]").change(function() //start of supplies
+      $("select[name=cleaner]").change(function()
         {
             toy[24] = document.getElementsByName("cleaner")[0].value;
             price[24] = toy[24] * 35.99;
@@ -595,6 +599,7 @@
         });
 
 
+      // Calculates subtotal, tax, and total price
       $("select").change(function()
         {
             subtotal = 0;
@@ -619,6 +624,7 @@
     });
     </script>
 
+    <!-- Displays subtotal, tax, and total price at the bottom of checkout page -->
     <p style="border-bottom:none;">Subtotal:
        <input type="text"  name='subtotal' id="subtotal" />
     </p>
@@ -631,6 +637,7 @@
     <a href="checkout.html" id="button" style="outline: 5px dotted #9fc489; float:left;">Checkout</a>
 
   <br/><br/><br/><br/>
+  <!--placing the footer at the bottom of the page -->
       <footer class="footer">
       <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
       <a href="appointments.html">Appointments</a> &nbsp;&nbsp;&nbsp;

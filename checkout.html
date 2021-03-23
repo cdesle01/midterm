@@ -11,12 +11,13 @@
 </head>
 
 <body>
-
+    
+<!--placing the header at the top of the page with logo linked to home page-->
   <h1 class="header"> Pet Palace
     <a href="home.html"><img src="logo.png"></a>
   </h1>
 
-
+<!--placing the navigation bar under the header -->
   <h3 class="topnav" >
     <img src="prints.png">
     <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="birdtracks.png">
@@ -36,10 +37,8 @@
   <h2 > Checkout </h2>
   <hr></hr>
 
-
-
-
-    <form action="purchased.html"
+<!--Create form that takes customer information in order to complete the order-->
+    <form action="purchased.html" 
   	style="text-align:center;
   	        position:fixed;
   		top:62%;
@@ -55,12 +54,12 @@
     		margin:25px 29px auto;
     		border: 3px black solid;
     		border-radius: 10px;
-  	       "><label>First name:</label> <input type="text" name='Firstname' required='1'>
-           Last name: <input type="text" name='Lastname' required='1'><br><br><br>
-           Address: <input type="text" name='Address' required='1'>
-           City: <input type="text" name='City' required='1'><br><br><br>
-           State: <select name="state" id="state" required>
-              <option value="" selected="selected">Select a State</option>
+  	       "><label>First name:</label> <input type="text" name='Firstname' required='1'> <!--requires an input-->
+           Last name: <input type="text" name='Lastname' required='1'><br><br><br> <!--requires an input-->
+           Address: <input type="text" name='Address' required='1'> <!--requires an input-->
+           City: <input type="text" name='City' required='1'><br><br><br> <!--requires a city-->
+           State: <select name="state" id="state" required> <!--Drop down menu to select a state-->
+              <option value="" selected="selected">Select a State</option> 
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -114,15 +113,16 @@
               <option value="WY">Wyoming</option>
             </select>
     Zip Code: <input type="number" name='Zipcode' minlength="5" maxlength="5" required=><br><br><br>
-    Email: <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-    Phone Number: <input type="tel" name="Phone" pattern="[0-9]{10}" required><br><br><br>
-    Card Number: <input type="number" name='Card' minlength="13" maxlength="19"required>
-    Expiration: <input type="number" name='Month' placeholder="MM" min="1" max="12" required><input type="number" name='Year' placeholder="YY" min="21" max="28" required> <br><br>
-    Security Code (CVV): <input type="number" name='CVV' minlength="3" maxlength="3" required><br><br>
+    Email: <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <!--requires a valid email address-->
+    Phone Number: <input type="tel" name="Phone" pattern="[0-9]{10}" required><br><br><br> <!--requires a valid phone number-->
+    Card Number: <input type="number" name='Card' minlength="13" maxlength="19"required> <!--requires a valid credit card number-->
+    Expiration: <input type="number" name='Month' placeholder="MM" min="1" max="12" required> <!--requires a valid month-->
+    <input type="number" name='Year' placeholder="YY" min="21" max="28" required> <br><br> <!--requires a valid year-->
+    Security Code (CVV): <input type="number" name='CVV' minlength="3" maxlength="3" required><br><br> <!--requires a valid security code-->
     <input type="submit" value = "Submit">
     </form>
 
-
+<!--placing the footer at the bottom of the page -->
 <br/><br/>
     <footer class="footer">
     <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
