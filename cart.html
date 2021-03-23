@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cart</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style type="text/css">
+    h1,h3{margin:0; border:0;}
+    p{margin: 20px;}
+    #cart-table div {display:inline-block; font-size: 15px}
+    #cart-table div.singleItem {display:block;  padding: 15px 0;  border-bottom: 1px solid #333}
+
+    .productColumn {width: 150px}
+    .priceColumn {width: 90px}
+    .priceColumn input {width: 70px}
+    .quantityColumn {width: 80px}
+
+    #cart-table div.title {font-weight:700;  font-size: 18px }
+</style>
+<script language="javascript">
+itemsList = [
+    ["Large bed", 24.99],
+    ["Small bed", 14.99],
+    ["Hard food", 12.99],
+    ["Soft food", 11.99],
+    ["Treats", 8.99],
+    ["Large crate", 35.99],
+    ["Small crate", 23.99],
+    ["Food bowl", 6.99],
+    ["Collar", 7.99],
+    ["Leash", 6.99],
+    ["Shampoo", 5.99],
+    ["Conditioner", 5.99],
+    ["Brush", 3.99],
+    ["Doggie bags", 2.99],
+    ["Cleaner", 4.99],
+    ["Plush dog toy", 4.99],
+    ["Squeeze ball", 2.99],
+    ["Dogwood toy", 7.99],
+    ["Rope with ball", 5.99],
+    ["Pacifier toy", 3.99],
+    ["Plush cow toy", 6.99],
+    ["Kong dog toy", 12.99],
+    ["Squeaking balls", 4.99],
+    ["Elephant toy", 5.99],
+    ["Beef bone", 5.99]
+];
+numItems = 25;
+
+$(document).ready(function(){
+	$(".quantityColumn select").change(function() {
+		updateFinal();
+	})
+    function updateFinal()
+	{
+		total=0;
+		for (n=0;n<numItems;n++)
+		{
+			cost = itemsList[n][1]
+			quantity = document.forms[0].itemQuantity[n].value
+			itemTotal =cost * quantity;
+			total += itemTotal;
+		}
+		$("#total").html("$ " + total.toFixed(2))
+	}
+})
+
+function quantityGen()
+{
+	document.write("<select name='itemQuantity'>");
+	for (i=0; i<10;i++)
+		document.write("<option>" + i + "</option>");
+	document.write("</select>");
+}
+
+function createOrderForm()
+{
+
+	for (n=0;n<numItems;n++)
+	{
+		document.write("<div class='singleItem'>")
+
+            document.write ("<div class='productColumn'>");
+			document.write(itemsList[n][0]);
+			document.write ("</div>");
+
+			document.write ("<div class='priceColumn'> " + "$" + itemsList[n][1] + "</div>");
+
+			document.write ("<div class='quantityColumn'>");
+				quantityGen();
+			document.write ("</div>");
+		document.write ("</div>");
+	}
+}
+
+</script>
+</head>
+
+<body>
+
+  <h1 class="header"> Pet Palace
+    <a href="home.html"><img src="logo.png"></a>
+  </h1>
+
+  <h3 class="topnav" >
+    <img src="prints.png">
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+    <a href="aboutus.html">About us</a>
+    <a href="supplies.html">Supplies</a>
+    <a href="toys.html">Toys</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="home.html">Home</a>
+  </h3>
+
+  <div class="spacing" style="height:180px">
+      <p></p>
+  </div>
+
+  <h2>Your Cart</h2>
+
+
+  <div id='cart-table'>
+  <div class='singleItem'>
+      <div class='productColumn title'>Product</div>
+      <div class='priceColumn title'>Price Each</div>
+      <div class='quantityColumn title'>Quantity</div>
+  </div>
+
+  <form style="text-align:center;
+          color:white;
+          background-color:white;
+          background-size:30px 100%, 100% 100%;
+          width:650px;
+          padding:20px;
+          color:black;
+          margin:40px 29px auto;
+          border: 3px black solid;
+          border-radius: 10px;
+         ">
+  <script language="javascript">
+      createOrderForm();
+  </script>
+  </form>
+  </div>
+  <div id='total'
+    style="float:left; padding-left: 308px;
+    position:sticky;
+    top:80;">
+    Total:  $0.00</div>
+
+
+
+<br/><br/>
+
+
+<a href="checkout.html" id="button" style="outline: 5px dotted #9fc489;">Checkout</a>
+
+  <br/><br/><br/><br/>
+      <footer class="footer">
+      <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
+      <a href="appointments.html">Services</a> &nbsp;&nbsp;&nbsp;
+      <a href="contact.html">Contact</a>
+      </footer>
+
+</body>
+</html>

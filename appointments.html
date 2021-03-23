@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Appointments</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style>
+    h1,h3{margin:0; border:0;}
+    p{margin: 20px;}
+</style>
+<style type="text/css">
+	.errMsg {color: #D20E11; border: solid 1px #d20e11; display:none;
+		padding: 1px 15px;	}
+
+    .middle-col{
+          background-color: #ccc;
+          width: 30%;
+          display: inline-block;
+          text-align: left;
+      }
+
+  .box{
+        color: #fff;
+        padding: 10px;
+        display: none;
+        margin-top: 10px;
+    }
+    .Grooming{ background: #ff0000; }
+    .Wash{ background: #228B22; }
+    .CustomIDTag{ background: #0000ff; }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('input[type="checkbox"]').click(function(){
+        var inputValue = $(this).attr("value");
+        $("." + inputValue).toggle();
+    });
+});
+</script>
+</head>
+
+<body>
+
+  <h1 class="header"> Pet Palace
+    <a href="home.html"><img src="logo.png"></a>
+  </h1>
+
+  <h3 class="topnav" >
+    <img src="prints.png">
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+    <a href="aboutus.html">About us</a>
+    <a href="supplies.html">Supplies</a>
+    <a href="toys.html">Toys</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="home.html">Home</a>
+  </h3>
+
+  <div class="spacing" style="height:180px">
+      <p></p>
+  </div>
+
+ <h2>Appointments</h2>
+   <hr></hr>
+
+<center>
+
+
+<div class="left-col" style="text-align: left; background-color:#9fc489;">
+    <h4 style="text-align: center; outline: 5px dotted #FFF;">Grooming</h4>
+
+    <img style="display:block; margin-left:auto; margin-right:auto;" src="groom.jpg">
+
+    <p style="font-size: 20px"><strong>What days and times do you offer grooming?</strong>
+We offer grooming 7 days a week. Appointment times will vary based on the day
+and season. We typically start booking at 9:00 AM with our last appointment of
+the day at 6:00 PM. If you have special needs that do not fall within these
+times, please let our staff know and we will make every effort to accommodate you.
+Our groomers are willing to take appointments as late as 6:00 PM depending on
+the day of the week and availability.<br/><br/> <strong>What’s included in a groom?</strong>
+Groom includes: Everything included for washes plus a full cut / style
+based on breed standards and / or your
+specific requests, Nails trimmed, and ears cleaned. <br/><br/>
+<strong>Grooming: $27-$67</strong></p>
+
+</div>
+
+<div class="middle-col">
+    <h4 style="text-align: center;outline: 5px dotted #FFF;">Wash</h4>
+
+    <img style="display:block; margin-left:auto; margin-right:auto;" src="wash.jpg">
+
+    <p style="font-size: 20px"><strong>What’s included in a wash?</strong>
+  Washes include: 1-3 cycles of shampoo, possibly 1 cycle of conditioner, hand-dry
+  as tolerated by dog, brush and / or comb out. <br/><br/><strong>How long does it usually take?</strong>
+Wash with no trim – 1 ½ -2 hours. Washes for large dog or dog that has a lot of hair – 2+ hours.
+Animals with matted hair may take more time. Your groomer will gladly call you just
+prior to or after your dog is finished. If you need your dog groomed in less time,
+please explain your needs when making your appointment and we will do our best to
+find a day and time to accommodate your request. The shampoos we use are of a
+top-rated product line that are designed to promote a healthy coat and skin.
+<br/><br/> <strong>Washes: $20-$55</strong>
+    </p>
+</div>
+
+<div class="right-col" style="text-align: left; background-color:#9fc489;">
+    <h4 style="text-align: center;outline: 5px dotted #FFF;">Custom ID Tag</h4>
+
+    <img style="display:block; margin-left:auto; margin-right:auto;" src="collar.jpg">
+
+    <p style="font-size: 20px"><strong>What are pet tags made of?</strong><br/>
+    Pet ID tags tend to be made out of aluminum, plastic, stainless steel, brass
+    or some alloy of metals. Aluminum tags are lightweight, colorful, easy to
+    make and very readable when new. Most dog license tags are aluminum. We
+    offer options that can also be paired with matching leashes and collars to keep
+    your pet in style! <br/><br/>
+    <strong>What should I put on my pet's ID tag?</strong> <br/>ID tags. All cats and
+    dogs need to wear collars with ID tags, rabies vaccination tags and city or
+    county licenses (where applicable). The ID tag should include the owner's name,
+    address, telephone numbers (day and evening) and the pet's name.
+    <br/><br/><strong> Custom ID Tags: ~$20</strong></p>
+</div>
+
+</center>
+
+<br>
+
+<script language="javascript">
+
+
+  function isNumeric(x) //uses built in isNaN() function to return if a an input is a number or not
+  {
+  	if (isNaN(x))
+  	{
+  		return false;
+  	}
+  	return true;
+  }
+
+  function myTime() //to get the user's currrent time from computer. rerferenced - plus2net.com/javascript_tutorial/clock.php
+{
+	var x = new Date() //date function pulls current date/time
+	var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM'; //AM and PM time
+	hours = x.getHours( ) % 12; //12 hours not military time
+	hours = hours ? hours : 12;
+	hours=hours.toString().length==1? 0+hours.toString() : hours; //add 0 when singe digit
+
+	var minutes=x.getMinutes().toString()
+	minutes=minutes.length==1 ? 0+minutes : minutes;
+
+	var seconds=x.getSeconds().toString()
+	seconds=seconds.length==1 ? 0+seconds : seconds;
+
+	var month=(x.getMonth() +1).toString();
+	month=month.length==1 ? 0+month : month;
+
+	var dt=x.getDate().toString();
+	dt=dt.length==1 ? 0+dt : dt;
+
+	var x1=month + "/" + dt + "/" + x.getFullYear(); //mm/dd/yyyy format
+	return x1 = x1 + " - " +  hours + ":" +  minutes + ":" +  seconds + " " + ampm; //time
+}
+
+</script>
+
+<div class="form">
+    <br />
+    <h3>Book An Appointment!</h3>
+    <br />
+    <form name = 'appointments'>
+  Your Name*: <input type="text" name = 'name' required='1'>
+  <div id="errName" class="errMsg">A name is required</div><br/></br>
+  <br />
+
+    Phone Number*: <input type = "text" name = 'number' required='1'>
+    <div id="errNumber" class="errMsg">A phone number is required</div>
+    <div id="numError1" class="errMsg">Enter valid phone number (input contained spaces, symbols, or letters) </div>
+	<div id="numError2" class="errMsg">Enter valid phone number (input was not 10 digits) </div>
+	<div id="numError3" class="errMsg">Enter valid phone number (input was not 10 digits and contained spaces, symbols, or letters) </div>
+
+    <br/></br>
+    <br />
+
+  Pet's Name*: <input type = "text" name = 'animal' required='1'>
+  <div id="errAName" class="errMsg">Your pet's name is required</div><br/></br>
+  <br />
+
+  Services Required*:
+      <input type="checkbox" id="1" name="groom" value="Grooming">Grooming
+      <input type="checkbox" id="2" name="wash" value="Wash">Wash
+      <input type="checkbox" id="3" name="custom" value="CustomIDTag">Custom ID Tag
+      <div id="errCheck" class="errMsg">Select at least one option</div><br/>
+
+      <div class="middle-col">
+          <div id="check1" class="Grooming box"> </div>
+          <div id="check2" class="Wash box">  </div>
+          <div id="check3" class="CustomIDTag box"></div>
+      </div>
+  <br />
+    <br />
+  Additional Information:
+      <input type="text" >
+  <br />
+    <br />
+  <input type = "button" value = "Submit">
+  <br/>
+</div>
+<br/>
+
+<script language="javascript">
+
+$(document).ready(function()
+{
+
+  $('input[name="groom"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check1").innerText = name + " is going to be groomed!";
+  });
+  $('input[name="wash"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check2").innerText = name + " is going to get washed!";
+  });
+  $('input[name="custom"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check3").innerText = name + " is going to get a custom ID tag!";
+  });
+
+  $('input[type="button"]').click(function()
+  {
+      count = 0; //tallys when something needs to be validated, if things need to be validated it won't go to the new window/give order summary until inputs are fixed
+      count2 = 0;
+       if(document.getElementsByName("name")[0].value == "") //if no last name input gives error message
+	      {
+		        document.getElementById("errName").style.display = "inline-block";
+		        count++;
+	         }
+           if(document.getElementsByName("name")[0].value != "") //if no last name input gives error message
+    	      {
+    		        document.getElementById("errName").style.display = "none";
+    		        count2++;
+    	         }
+	     if(document.getElementsByName("number")[0].value == "") //if no phone input gives error message
+	       {
+		         document.getElementById("errNumber").style.display = "inline-block";
+		           count++;
+	            }
+	    x = document.getElementsByName("number")[0].value;
+	    if(x != "") //gives various error message for bad phone inputs
+	    {
+        invalid = false;
+        document.getElementById("errNumber").style.display = "none";
+		      if (isNumeric(x)==false) //not valid phone number if there are letters
+		       {
+			         if (x.length != 10) //not valid if not full 10 digit number
+			         {
+				         document.getElementById("numError3").style.display = "inline-block";
+                   document.getElementById("numError1").style.display = "none";
+                     document.getElementById("numError2").style.display = "none";
+				         count++;
+                 invalid = true;
+			         }
+			         else
+			         {
+				        document.getElementById("numError1").style.display = "inline-block";
+                document.getElementById("numError3").style.display = "none";
+                  document.getElementById("numError2").style.display = "none";
+				       count++;
+               invalid = true;
+			         }
+		        }
+		      else if (x.length != 10)
+	         {
+			          document.getElementById("numError2").style.display = "inline-block";
+                document.getElementById("numError1").style.display = "none";
+                  document.getElementById("numError3").style.display = "none";
+			             count++;
+                  invalid = true;
+		       }
+           if (invalid == false){
+             document.getElementById("numError2").style.display = "none";
+             document.getElementById("numError1").style.display = "none";
+               document.getElementById("numError3").style.display = "none";
+             document.getElementById("errNumber").style.display = "none";
+             count2++;
+           }
+	     }
+       if(document.getElementsByName("animal")[0].value == "") //if no phone input gives error message
+	       {
+		         document.getElementById("errAName").style.display = "inline-block";
+		           count++;
+	            }
+              if(document.getElementsByName("animal")[0].value != "") //if no phone input gives error message
+       	       {
+       		         document.getElementById("errAName").style.display = "none";
+       		           count2++;
+       	            }
+
+        var b1 = document.getElementById('1');
+        var b2 = document.getElementById('2');
+        var b3 = document.getElementById('3');
+        if(b1.checked || b2.checked || b3.checked) //if no box checked gives error message
+        {
+            document.getElementById("errCheck").style.display = "none";
+            count2++;
+        }
+        if(!b1.checked && !b2.checked && !b3.checked) //if no box checked gives error message
+        {
+            document.getElementById("errCheck").style.display = "inline-block";
+            count++;
+        }
+
+    if (count2 == 4)
+    {
+      t = myTime();
+      alert("See you soon! Your appointment was booked at " + t);
+      window.location.reload();
+    }
+  });
+});
+</script>
+
+
+
+<br/><br/>
+    <footer class="footer">
+    <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
+    <a href="appointments.html">Services</a> &nbsp;&nbsp;&nbsp;
+    <a href="contact.html">Contact</a>
+    </footer>
+
+
+
+
+</body>
+
+</html>

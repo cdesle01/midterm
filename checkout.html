@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Checkout</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style>
+    h1,h3{margin:0; border:0;}
+    p{margin: 20px;}
+</style>
+</head>
+
+<body>
+
+  <h1 class="header"> Pet Palace
+    <a href="home.html"><img src="logo.png"></a>
+  </h1>
+
+
+  <h3 class="topnav" >
+    <img src="prints.png">
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+    <a href="aboutus.html">About us</a>
+    <a href="supplies.html">Supplies</a>
+    <a href="toys.html">Toys</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="home.html">Home</a>
+  </h3>
+
+  <div class="spacing" style="height:180px">
+      <p></p>
+  </div>
+  <h2 > Checkout </h2>
+  <hr></hr>
+
+
+
+
+    <form action="https://formspree.io/f/xrgovwkg" method='post'
+  	style="text-align:center;
+  	        position:fixed;
+  		top:62%;
+  		left:50%;
+  		transform: translate(-50%, -50%);
+  	        color:white;
+  	        background-color:white;
+    		background-size:30px 100%, 100% 100%;
+    		width:650px;
+    		height:250px;
+  	        padding:20px;
+    		color:black;
+    		margin:40px 29px auto;
+    		border: 3px black solid;
+    		border-radius: 10px;
+  	       "><label>First name:</label> <input type="text" name='Firstname' required='1'>
+    Last name: <input type="text" name='Lastname' required='1'><br><br>
+    Address: <input type="text" name='Address' required='1'>
+    City: <input type="text" name='City' required='1'><br><br>
+    State: <input type="text" name='State' required='1'>
+    Zip Code: <input type="number" name='Zipcode' required='1'><br><br>
+    Card Number: <input type="number" name='Card' required='1'>
+    Expiration: <input type="text" name='Exp' required='1'><br><br>
+    Security Code: <input type="number" name='CVV' required='1'><br><br>
+    <input type="submit" value = "Submit">
+    <input type="hidden" name="_next" value="purchased.html" /></form>
+
+<br/><br/>
+    <footer class="footer">
+    <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
+    <a href="appointments.html">Services</a> &nbsp;&nbsp;&nbsp;
+    <a href="contact.html">Contact</a>
+    </footer>
+
+
+
+
+</body>
+
+</html>
